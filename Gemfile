@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'mongo_mapper', github: 'jnunemaker/mongomapper'
+gem 'bson_ext'
+
+gem	'foundation-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
