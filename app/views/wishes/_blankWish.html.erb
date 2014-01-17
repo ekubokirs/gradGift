@@ -1,0 +1,9 @@
+<div class="gw_text">
+	<%= form_for @blank, url:{action:"create"} do |wish| %>
+		<div class = "large-12 columns">
+			<%= wish.label :blank_wish, "Your Custom Message:" %>
+			<%= wish.text_area :blank_wish %>
+		</div>
+		<%= wish.submit %>
+	<% end %>
+</div>

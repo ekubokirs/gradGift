@@ -1,0 +1,77 @@
+<div class="gw_newForm">
+	<%= form_for @nice, url:{action: "create"} do |wish| %>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :nickname, "Nickname:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :nickname %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :time, "Length of Time:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :time %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :nice_one, "Something Nice:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :nice_one %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :advice, "Nice Advice:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :advice %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :thought, "Nice Thought:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :thought %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :hope, "Nice Hope:" %>
+			</span>
+			<span class="large-9 columns right">
+				<%= wish.text_field :hope %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :closing, "Salutation:" %>
+			</span>
+			<span class="large-9 columns">
+				<%= wish.text_field :closing %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :friend, "Your Name:" %>
+			</span>
+			<span class="large-9 columns">
+				<%= wish.text_field :friend %>
+			</span>
+		</div>
+		<div class="row">
+			<span class="large-3 columns">
+				<%= wish.label :ps, "Final Thoughts:" %>
+			</span>
+			<span class="large-9 columns">
+				<%= wish.text_field :ps %>
+			</span>
+		</div>
+		<%= wish.submit %>
+	<% end %>
+</div>

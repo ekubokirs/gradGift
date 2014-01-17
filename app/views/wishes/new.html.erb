@@ -1,0 +1,23 @@
+<%#= render partial: @nav %>
+<div class = "gw_body">
+	<div class = "gw_text gw_intro">
+		So you want to leave a congrats message for Lizzie.  Well, you have three options.  You can choose a mad-libs style note that is either sassy or nice or if you know exactly what you want to say, you can leave her a blank note.  Just a reminder that this is <span class="gw_secret">top secret</span> and Lizzie hopefully won't know until right after graduation.
+	</div>
+	<dl class="sub-nav">
+		<dt>Select One:</dt>
+		<dd id="gw_newSass">Sassy Wish</dd>
+		<dd id="gw_newNice">Nice Wish</dd>
+		<dd id="gw_newBlank">Blank Wish</dd>
+	</dl>
+	<div class="gw_newWish">
+		<div class="gw_newSass gw_new">
+			<%= render partial: "sassy" %>
+		</div>
+		<div class="gw_newNice gw_new">
+			<%= render partial: "nice" %>
+		</div>
+		<div class="gw_newBlank gw_new">
+			<%= render partial: "blank" %>
+		</div>
+	</div>
+</div>
