@@ -1,4 +1,4 @@
-class NiceWish
+class NiceWish < Wish 
   include MongoMapper::Document
 
 	key	:nickname,	String, :required =>	true
