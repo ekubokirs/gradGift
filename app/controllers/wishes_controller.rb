@@ -2,11 +2,11 @@ class WishesController < ApplicationController
 
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
-		# if current_user && is_authenticated?
-		# 	@nav = "friend"
-		# else
-		# 	@nav = "non_friend"
-		# end
+		if current_user
+		 	@nav = "shared/friend"
+		else
+			@nav = "shared/non_friend"
+		end
 	end
 
 	def new
