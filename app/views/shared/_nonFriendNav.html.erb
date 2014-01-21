@@ -1,16 +1,13 @@
-<nav class="topbar">
-	<ul class="title-area">
-		<li class="name">
-		</li>
-		<li class="toggle-topbar menu-icon">
-			<a href="#">
-				<span>Menu</span>
-			</a>
-		</li>
-	</ul>
-	<section class="top-bar-section">
-		<ul class="right">
-			<li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
-		</ul>
-	</section>
-</nav>
+<div class="contain-to-grid fixed" id="user-widget">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li> <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> </li>
+      </ul>
+    </section>
+  </nav>
+</div>
