@@ -27,4 +27,4 @@ $(function(){
 			$("#gw_newBlank").addClass("gw_active");
 	});
 	return false;
-})
+});
