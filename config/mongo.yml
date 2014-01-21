@@ -17,11 +17,11 @@ test:
   w: 0
 
 # set these environment variables on your prod server
+# production:
+#   <<: *defaults
+#   database: grad_gift
+#   username: <%= ENV['MONGO_USERNAME'] %>
+#   password: <%= ENV['MONGO_PASSWORD'] %>
+
 production:
-  <<: *defaults
-  # mongodb://heroku_app21445121:2404john@ds027489.mongolab.com:27489/heroku_app21445121
-  host: ds027489.mongolab.com:27489
-  port: 41178
-  database: grad_gift
-  username: heroku_app21445121
-  password: 2404john
+    uri: mongodb://heroku_app21445121:2404john@ds027489.mongolab.com:27489/heroku_app21445121
