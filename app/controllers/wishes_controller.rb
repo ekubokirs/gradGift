@@ -3,13 +3,21 @@ class WishesController < ApplicationController
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
 		if current_user
-		 	@nav = "shared/friend"
+		 	@nav = "shared/friendNav"
+		 	@user = current_user
 		else
-			@nav = "shared/non_friend"
+			@nav = "shared/nonFriendNav"
 		end
 	end
 
 	def new
+		if current_user
+		 	@nav = "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav = "shared/nonFriendNav"
+		end
+		
 		@sassy 	= SassyWish.new
 		@nice 	= NiceWish.new
 		@blank 	= BlankWish.new
