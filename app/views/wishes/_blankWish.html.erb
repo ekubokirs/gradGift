@@ -1,7 +1,7 @@
 <div class="gw_text">
 	<%= form_for @blank, url:{action:"create"} do |wish| %>
 		<div class = "large-12 columns">
-			<%= wish.label :blank_wish, "Your Custom Message:" %>
+			<%= wish.label :blank_wish, "Please enter your custom message below." %>
 			<%= wish.text_area :blank_wish %>
 		</div>
 		<%= wish.submit "Submit Wish", :class => "button small" %>

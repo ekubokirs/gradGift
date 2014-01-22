@@ -2,12 +2,15 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-      	<%= @user.name %>
+      	<%= link_to "Yay Lizzie!", root_url %>
       </li>
     </ul>
     <section class="top-bar-section">
       <ul class="right">
+        <li><%= @user.name %></li>
+        <li class="divider"></li>
         <li><%= link_to "See All Notes", wishes_url %></li>
+        <li class="divider"></li>
 				<li><%= link_to "New", new_wish_url %></li>
       </ul>
     </section>

@@ -35,9 +35,10 @@ class WishesController < ApplicationController
 		end
 
 		if @wish.save!
-			redirect_to root_url
+			redirect_to wishes_url
 		else
-			# error message
+			flash[:error] ="Something Went Wrong!  Did you fill in all the blanks?"
+			render :new
 		end
 	end
 
