@@ -1,8 +1,10 @@
 class WishesController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
-		if current_user
+		if current_userß
 		 	@nav = "shared/friendNav"
 		 	@user = current_user
 		else
