@@ -24,4 +24,4 @@ test:
 #   password: <%= ENV['MONGO_PASSWORD'] %>
 
 production:
-    uri: mongodb://emk411:2404john@ds027489.mongolab.com:27489/heroku_app21445121
+    uri: <%= ENV['mongodb://emk411:2404john@ds027489.mongolab.com:27489/heroku_app21445121'] %>
