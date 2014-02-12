@@ -17,5 +17,5 @@ rerun.txt
 pickle-email-*.html
 .project
 
-config/initializers/omniauth.rb
+
 config/mongo.yml
