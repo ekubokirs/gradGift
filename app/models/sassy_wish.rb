@@ -1,15 +1,17 @@
 class SassyWish < Wish 
   include MongoMapper::Document
 
-  key	:nickname,				String, 	:required => true
-  key	:time,						String, 	:required => true
-  key :relationship,		String, 	:required => true
-  key	:embarrassing,		String, 	:required => true
-  key	:good_advice,			String, 	:required => true
-  key	:bad_things,			String, 	:required => true
-  key	:luck,						String, 	:required => true
-  key	:closing,					String, 	:required => true
-  key	:friend,					String, 	:required => true
-  key	:ps,							String, 	:required => true
+  key	:nickname,				String	
+  key	:time,						String	
+  key :relationship,		String	
+  key	:embarrassing,		String	
+  key	:good_advice,			String	
+  key	:bad_things,			String	
+  key	:luck,						String 	
+  key	:closing,					String	
+  key	:friend,					String
+  key	:ps,							String
+
+  validates_presence_of :nickname, :time, :relationship, :embarrassing, :good_advice, :bad_things, :luck, :closing, :friend, :ps
   
 end
