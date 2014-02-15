@@ -1,5 +1,15 @@
 <%= render partial: @nav %>
 <div class = "gw_body">
+	<% if @errors == true %>
+    <div id="error_explanation">
+      <h2>The following errors prohibited this task from being saved:</h2>
+      <ul>
+      <% @wish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 	<div class = "gw_text gw_intro">
 		So you want to leave a congrats message for Lizzie.  Well, you have three options.  You can choose a mad-libs style note that is either sassy or nice or if you know exactly what you want to say, you can leave her a blank note.  Just a reminder that this is <span class="gw_secret">top secret</span> and Lizzie hopefully won't know until right after graduation.
 	</div>

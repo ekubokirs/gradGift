@@ -4,7 +4,7 @@ class WishesController < ApplicationController
 
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
-		if current_userß
+		if current_user
 		 	@nav = "shared/friendNav"
 		 	@user = current_user
 		else
