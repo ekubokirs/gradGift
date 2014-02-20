@@ -11,8 +11,6 @@ gem	'foundation-rails'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
-gem "client_side_validations"
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

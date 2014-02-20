@@ -36,8 +36,12 @@ class WishesController < ApplicationController
 			render :new
 		end
 
-		@wish.save!
-		redirect_to wishes_url
+		if @wish.errors.any?
+			render :new
+		else
+			@wish.save!
+			redirect_to wishes_url
+		end
 	end
 
 	private
