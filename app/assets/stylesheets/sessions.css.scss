@@ -4,11 +4,26 @@
 .gw_listPics{
 	margin-right: auto;
 	margin-left:	auto;
-	background-color: blue;
 }
 .gw_orbit{
 	margin-right: auto;
 	margin-left:	auto;
+}
+.orbit-prev{
+	height:90px;
+  width:45px;
+  border-radius: 90px 0 0 90px;
+  -moz-border-radius: 90px 0 0 90px;
+  -webkit-border-radius: 90px 0 0 90px;
+  background:gray;
+}
+.orbit-next{
+	height:90px;
+ 	width:45px;
+ 	border-radius: 0 90px 90px 0;
+ 	-moz-border-radius: 0 90px 90px 0;
+ 	-webkit-border-radius:  0 90px 90px 0;
+ 	background:gray;
 }
 .gw_title{
 	margin-right: auto;

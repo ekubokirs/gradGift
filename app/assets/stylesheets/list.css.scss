@@ -1,8 +1,6 @@
-.gw_para:nth-child(even){
-	background-color: lightblue;
-}
 .gw_para{
 	margin: 2%;
 	padding: 1%;
-	line-height: 150%
+	line-height: 150%;
+	border-bottom: 1px solid black;
 }

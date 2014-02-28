@@ -1,0 +1,6 @@
+.gw_username{
+	background-image: url("cream_pixels.png");
+}
+.gw_nav:hover{
+	border: 1px solid red;
+}
