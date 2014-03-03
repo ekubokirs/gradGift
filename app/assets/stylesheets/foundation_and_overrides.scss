@@ -1013,7 +1013,7 @@ $body-bg: $body-bg-image;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-image: url("cream_pixels.png");
+$topbar-bg-image: $body-bg-image;
 $topbar-bg: $topbar-bg-image;
 
 // Height and margin
