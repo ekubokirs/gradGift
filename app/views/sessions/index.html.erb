@@ -1,12 +1,12 @@
 <%= render partial: @nav %>
-<div class=" row gw_head">
-	<h1 class="gw_title">Yay Lizzie!</h1>
-	<h2 class= "gw_subtitle">Congrats on Graduating!</h2>
-</div>
-<div class= "row gw_pics">
-	<%= render partial: "photos" %>
-</div>
-<div class="row gw_welcome">
-	Welcome to Lizzie's Graduation Website!  This is an easy place to leave her a message that she will see starting the day she walks.  Please remember that this is a secret until then and technically still in development until May 1st so please do not leave messages before that time as they will be erased.
+<%= render partial: "shared/header" %>
+<div class="gw_body">
+	<div class="row gw_welcome">
+		<div class="gw_open">Welcome to Lizzie's Graduation Website!</div> 
+		This is an easy place to leave her a message that she will see starting the day she walks.  Please remember that this is a secret until then and technically still in development until May 1st so please do not leave messages before that time as they will be erased.
+	</div>
+	<div class= "row gw_pics">
+		<%= render partial: "photos" %>
+	</div>
 </div>
 <% render partial: "shared/footer" %>

@@ -1,19 +1,16 @@
-<div class="contain-to-grid fixed" id="user-widget">
+<div class="contain-to-grid" id="user-widget">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
-      <li class="name">
+      <li class="name gw_home">
       	<%= link_to "Yay Lizzie!", root_url %>
       </li>
     </ul>
     <section class="top-bar-section">
       <ul class="right">
-        <li><%= @user.name %></li>
-        <li class="divider"></li>
-        <li><%= link_to "See All Notes", wishes_url %></li>
-        <li class="divider"></li>
-				<li><%= link_to "New", new_wish_url %></li>
-        <li class="divider"></li>
-        <li><%= link_to "Sign Out", signout_url %></li>
+        <li class="gw_username"><%= @user.name %></li>
+        <li class="gw_nav"><%= link_to "See All Notes", wishes_url %></li>
+				<li class="gw_nav"><%= link_to "New", new_wish_url %></li>
+        <li class="gw_nav"><%= link_to "Sign Out", signout_url %></li>
       </ul>
     </section>
   </nav>

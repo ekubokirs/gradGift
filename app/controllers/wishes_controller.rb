@@ -36,10 +36,10 @@ class WishesController < ApplicationController
 			render :new
 		end
 
+		@wish.save!
 		if @wish.errors.any?
 			render :new
 		else
-			@wish.save!
 			redirect_to wishes_url
 		end
 	end

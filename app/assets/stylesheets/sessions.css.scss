@@ -1,24 +1,31 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .gw_listPics{
 	margin-right: auto;
 	margin-left:	auto;
-	background-color: blue;
 }
 .gw_orbit{
 	margin-right: auto;
 	margin-left:	auto;
 }
-.gw_title{
-	margin-right: auto;
-	margin-left:	auto;
+.orbit-prev{
+	height:90px;
+  width:45px;
+  border-radius: 90px 0 0 90px;
+  -moz-border-radius: 90px 0 0 90px;
+  -webkit-border-radius: 90px 0 0 90px;
+  background:gray;
 }
-.gw_subtitle{
-	margin-right:	auto;
-	margin-left:	auto;
+.orbit-next{
+	height:90px;
+ 	width:45px;
+ 	border-radius: 0 90px 90px 0;
+ 	-moz-border-radius: 0 90px 90px 0;
+ 	-webkit-border-radius:  0 90px 90px 0;
+ 	background:gray;
 }
 img{
 	width: auto;
 	height: 500px;
+}
+.gw_open{
+	text-align: center;
 }

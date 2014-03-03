@@ -1,37 +1,16 @@
-.gw_intro{
-	margin: 1%;
+.gw_wish{
+	margin:2% 5%;
 }
-
-.gw_secret{
-	font-size: 3em;
-	text-transform: uppercase;
-	margin-bottom: 1px double black;
-	color: red;
+.gw_wishNav{
+	margin-bottom: 0;
 }
-
+.gw_wishBox{
+	margin-top: 0;
+}
 .gw_active{
-	background-color: blue;
+		border-bottom: 1px solid black;
+		background-color: green;
 }
-
-.gw_new{
-	border: .5px solid black;
-	margin: 2%;
-	padding: 1%;
-}
-
-.gw_example{
-	border: 1px solid black;
-	padding: 0 1%;
-}
-
-.gw_paraExa{
-	border: 1px solid black;
-	padding: 1%;
-	margin: 1%
-}
-
-.gw_newForm{
-	border: 1px solid black;
-	padding: 2%;
-	margin:1%;
-}
+.gw_newWish{
+	background-color: green;
+	}
