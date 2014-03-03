@@ -1,26 +1,17 @@
 <%= render partial: @nav %>
-<div class = "gw_body">
-	<% if @errors == true %>
-    <div id="error_explanation">
-      <h2>The following errors prohibited this task from being saved:</h2>
-      <ul>
-      	<% if @wish.errors.any? %>
-      		<% @wish.errors.full_messages.each do |msg| %>
-        		<li><%= msg %></li>
-      		<% end %>
-      	<% end %>
-      </ul>
-    </div>
-  <% end %>
-	<div class = "gw_text gw_intro">
-		So you want to leave a congrats message for Lizzie.  Well, you have three options.  You can choose a mad-libs style note that is either sassy or nice or if you know exactly what you want to say, you can leave her a blank note.  Just a reminder that this is <span class="gw_secret">top secret</span> and Lizzie hopefully won't know until right after graduation.
+<div class="gw_secretHead">
+	<h2 class="gw_heading">Top Secret Instructions</h2>
+		<div class = "gw_text gw_intro">
+			So you want to leave a congrats message for Lizzie.  Well, you have three options.  You can choose a mad-libs style note that is either sassy or nice or if you know exactly what you want to say, you can leave her a blank note.  Just a reminder that this is <span class="gw_secret">top secret</span> and Lizzie hopefully won't know until right after graduation.
+		</div>
 	</div>
+<div class = "gw_new">
+  <ul class="inline-list gw_wishNav">
+		<li class="gw_select" id="gw_newSassy">Sassy Wish</li>
+		<li class="gw_select" id="gw_newNice">Nice Wish</li>
+		<li class="gw_select"	id="gw_newBlank">Blank Wish</li>
+	</ul>
 	<div class="gw_wish">
-		<ul class="inline-list gw_wishNav">
-			<li class="gw_select" id="gw_newSassy">Sassy Wish</li>
-			<li class="gw_select" id="gw_newNice">Nice Wish</li>
-			<li class="gw_select"	id="gw_newBlank">Blank Wish</li>
-		</ul>
 		<div class="gw_wishBox">
 			<div class="gw_newWish">
 				<div class="gw_newSassy gw_new">
