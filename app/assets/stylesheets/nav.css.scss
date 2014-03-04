@@ -10,18 +10,13 @@
 	vertical-align: middle;
 }
 .gw_star{
-	height: 16px;
+	height: 15px;
+	margin-bottom: 5px;
 }
-.gw_nav{
-	font: #033;
-	font-family: 'Lato', sans-serif;
-	font-size: 14px;
-	font-weight: 900;
-}
-.gw_nav:hover{
-	border: 1px solid #741a89;
-	padding: -5%;
-	color: #741a89;
+.top-bar-section li:hover a{
+	text-transform: uppercase;
+	font-weight: bold;
+
 }
 #sign_in{
 	color: #741a89;
