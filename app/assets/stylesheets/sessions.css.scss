@@ -1,3 +1,20 @@
+.gw_welcome{
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	margin: 5% auto;
+}
+.gw_open{
+	text-align: center;
+	font-size: 38px;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	margin-bottom: 2%;
+}
+.gw_openP{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 .gw_listPics{
 	margin-right: auto;
 	margin-left:	auto;
@@ -12,7 +29,7 @@
   border-radius: 90px 0 0 90px;
   -moz-border-radius: 90px 0 0 90px;
   -webkit-border-radius: 90px 0 0 90px;
-  background:gray;
+  background: #033;
 }
 .orbit-next{
 	height:90px;
@@ -20,21 +37,9 @@
  	border-radius: 0 90px 90px 0;
  	-moz-border-radius: 0 90px 90px 0;
  	-webkit-border-radius:  0 90px 90px 0;
- 	background:gray;
+ 	background: #033;
 }
 img{
 	width: auto;
 	height: 500px;
-}
-.gw_open{
-	text-align: center;
-	font-size: 38px;
-	font-family: 'Lato', sans-serif;
-	font-weight: bold;
-	margin-bottom: 2%;
-}
-.gw_welcome{
-	font-family: 'Lato', sans-serif;
-	font-size: 16px;
-	margin: 5%;
 }
