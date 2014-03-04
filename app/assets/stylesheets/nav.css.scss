@@ -1,7 +1,24 @@
-.gw_nav:hover{
-	border: 1px solid red;
+.gw_logo{
+	max-height: 45px;
+	width: auto;
 }
-.gw_home{
-	text-align: center;
-	vertical-align: middle;
+.gw_username{
+	color: #741a89;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+}
+.gw_nav{
+	font: #033;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	font-weight: 900;
+}
+.gw_nav:hover{
+	border: 1px solid #741a89;
+}
+#sign_in{
+	color: #741a89;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 19px;
 }

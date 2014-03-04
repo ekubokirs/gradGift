@@ -1,6 +1,20 @@
+.gw_wishList{
+	padding: 5%;
+	margin:5%;
+	box-shadow: 2px 2px 2px 2px #888;
+	text-align: center;
+}
+.gw_well{
+	height: 50px;
+}
 .gw_para{
 	margin: 2%;
 	padding: 1%;
 	line-height: 150%;
 	border-bottom: 1px solid black;
+}
+.gw_show{
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
 }

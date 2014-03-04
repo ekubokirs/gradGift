@@ -2,12 +2,12 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name gw_home">
-      	<%= link_to "Yay Lizzie!", root_url %>
+      	<%= link_to image_tag("../assets/logo.png", :class=>"gw_logo"), root_url %>
       </li>
     </ul>
     <section class="top-bar-section">
       <ul class="right">
-        <li class="gw_username"><%= @user.name %></li>
+        <li class="gw_username"><img src="star.png" /><%= @user.name %></li>
         <li class="gw_nav"><%= link_to "See All Notes", wishes_url %></li>
 				<li class="gw_nav"><%= link_to "New", new_wish_url %></li>
         <li class="gw_nav"><%= link_to "Sign Out", signout_url %></li>
