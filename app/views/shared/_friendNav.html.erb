@@ -7,7 +7,7 @@
     </ul>
     <section class="top-bar-section">
       <ul class="right">
-        <li class="gw_username"><img src="star.png" /><%= @user.name %></li>
+        <li class="gw_username"><img src="../assets/star.png" class="gw_star" /><%= @user.name %></li>
         <li class="gw_nav"><%= link_to "See All Notes", wishes_url %></li>
 				<li class="gw_nav"><%= link_to "New", new_wish_url %></li>
         <li class="gw_nav"><%= link_to "Sign Out", signout_url %></li>
