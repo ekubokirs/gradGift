@@ -1,13 +1,30 @@
 .gw_secretHead{
-	background-color:purple;
-	height: 350px;
+	background-image: url('hero_background.jpg');
+	height: 272px;
 	padding-left: 5%;
 	padding-right: 5%;
 	color:white
 }
 .gw_heading{
 	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
 	color: white;
+}
+.gw_intro{
+	color: white;
+	width: 50%;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.gw_secret{
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 .gw_new{
 	margin-left: 5%;
@@ -19,12 +36,16 @@
 	margin-top: -17px;
 	box-shadow: 0 2px 2px 2px #888;
 	background-color: white;
+	font-size: 20px;
 }
 .gw_select{
 	padding: 1%;
 	background-color:white;
 	width: 15%;
 	text-align: center;
+	color: #033;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
 }
 .gw_active{
 	background-color: white;
@@ -33,15 +54,31 @@
 .gw_inactive{
 	background-color: #888;
 }
-
 .gw_example{
-	border: 1px solid purple;
+	border: 2px solid #741a89;
+	color: #741a89;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
+	padding: .1%;
+	line-height: 200%;
+	font-size: 20;
 }
-.gw_line{
-	color: black;
+.gw_text{
+	margin-bottom: 2%;
+	font-weight: bold;
 }
-
+.gw_paraExa{
+	font-size: 20px;
+}
 .gw_newForm{
 	text-transform: lowercase;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+}
+.gw_formButton{
+	background-color: #033;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
 }

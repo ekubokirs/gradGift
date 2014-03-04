@@ -2,18 +2,18 @@
 	<% @wishes.each do |wish| %>
 		<% if wish._type == "SassyWish" %>
 			<div class="gw_para">
-				<%= wish.nickname %>,<br>
+				<%= wish.nickname :class => "gw_show" %>,<br>
 				It's been <%= wish.time %> that we've been <%= wish.relationship %>.  One of my favorite moments was when <%= wish.embarrassing %>.  Now that you are a college graduate, I would like to tell you <%= wish.good_advice %> but beware of <%= wish.bad_things %>.  Good luck <%= wish.luck %>!<br>
 				<%= wish.closing %><br>
-				<%= wish.friend %><br>
+				<%= wish.friend :class => "gw_show" %><br>
 				P.S. <%= wish.ps %>
 			</div>
 		<% elsif wish._type == "NiceWish" %>
 			<div class="gw_para">
-				<%= wish.nickname %>,<br>
+				<%= wish.nickname :class => "gw_show" %>,<br>
 				We've known each other <%= wish.time %> and I have always <%= wish.nice_one %>.  Now that you are a college graduate, <%= wish.advice %>.  I wish you <%= wish.thought %> and hope <%= wish.hope %>. <br>
 				<%= wish.closing %><br>
-				<%= wish.friend %><br>
+				<%= wish.friend :class => "gw_show" %><br>
 				P.S. <%= wish.ps %>
 			</div>
 		<% elsif wish._type == "BlankWish" %>
