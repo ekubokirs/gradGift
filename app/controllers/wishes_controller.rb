@@ -26,6 +26,11 @@ class WishesController < ApplicationController
 	end
 
 	def create
+		@user = current_user
+		@sassy 	= SassyWish.new
+		@nice 	= NiceWish.new
+		@blank 	= BlankWish.new
+		
 		if params[:sassy_wish]
 			@wish = SassyWish.new sassy_params
 		elsif params[:nice_wish]
@@ -36,9 +41,10 @@ class WishesController < ApplicationController
 			render :new
 		end
 
-		@wish.save!
+		@wish.save
 		if @wish.errors.any?
 			render :new
+			@user = current_user
 		else
 			redirect_to wishes_url
 		end

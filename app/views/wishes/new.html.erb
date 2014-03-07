@@ -1,4 +1,4 @@
-<%= render partial: @nav %>
+<%= render partial: "shared/friendNav" %>
 <div class="gw_secretHead">
 	<h2 class="gw_heading">Top Secret Instructions</h2>
 		<div class = "gw_intro">
@@ -12,6 +12,7 @@
 		<li class="gw_select"	id="gw_newBlank">Blank Wish</li>
 	</ul>
 	<div class="gw_wish">
+		<div class="gw_error"><%= @wish.errors.full_messages.first if @wish.errors.any? %></div>
 		<div class="gw_newWish">
 			<div class="gw_newSassy gw_new">
 				<%= render partial: "sassyWish" %>
