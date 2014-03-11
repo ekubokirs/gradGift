@@ -1,0 +1,10 @@
+<div class="gw_errors row">
+  <h2 class="gw_errorHead">
+  		<%= pluralize(@wish.errors.count, "error") %> prohibited this wish from being saved:
+  </h2>
+  <ul class="gw_errorList">
+	  <% @wish.errors.full_messages.each do |msg| %>
+	    <li class="gw_errorMessage"><%= msg %></li>
+	  <% end %>
+  </ul>
+</div>

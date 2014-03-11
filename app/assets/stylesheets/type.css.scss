@@ -7,3 +7,47 @@
 .gw_newBlank{
 	display:none;
 }
+.gw_select{
+	padding: 1%;
+	background-color:white;
+	width: 15%;
+	text-align: center;
+	color: #033;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+}
+.gw_active{
+	background-color: white;
+	font-weight: bold;
+}
+.gw_inactive{
+	background-color: #888;
+}
+.gw_example{
+	border: 2px solid #741a89;
+	color: #741a89;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+	padding: .1%;
+	line-height: 200%;
+	font-size: 20;
+}
+.gw_text{
+	margin-bottom: 2%;
+	font-weight: bold;
+}
+.gw_paraExa{
+	font-size: 20px;
+}
+.gw_newForm{
+	text-transform: lowercase;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+}
+.gw_formButton{
+	background-color: #033;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}

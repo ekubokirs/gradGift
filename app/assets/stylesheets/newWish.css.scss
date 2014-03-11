@@ -30,57 +30,33 @@
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: -100px;
+	border-color: white;
 }
 .gw_wish{
 	margin-top: -17px;
-	box-shadow: 0 2px 2px 2px #888;
+	box-shadow: 0 1px 1px 1px #888;
 	background-color: white;
 	font-size: 20px;
+	z-index: 1;
 }
 .gw_newWish{
-	margin-top: 120px;
-}
-.gw_select{
-	padding: 1%;
-	background-color:white;
-	width: 15%;
-	text-align: center;
-	color: #033;
-	font-family: 'Lato', sans-serif;
-	font-size: 16px;
-}
-.gw_active{
+	margin-top: 100px;
 	background-color: white;
-	font-weight: bold;
 }
-.gw_inactive{
-	background-color: #888;
+.gw_errors{
+	
+	
 }
-.gw_example{
-	border: 2px solid #741a89;
-	color: #741a89;
-	font-weight: bold;
+.gw_errorHead{
 	font-family: 'Lato', sans-serif;
-	text-transform: uppercase;
-	padding: .1%;
-	line-height: 200%;
-	font-size: 20;
+	font-size: 25px;
+	text-align: center;
 }
-.gw_text{
-	margin-bottom: 2%;
-	font-weight: bold;
-}
-.gw_paraExa{
-	font-size: 20px;
-}
-.gw_newForm{
-	text-transform: lowercase;
-	font-size: 20px;
+.gw_errorMessage{
 	font-family: 'Lato', sans-serif;
-}
-.gw_formButton{
-	background-color: #033;
-	color: white;
-	text-transform: uppercase;
-	font-weight: bold;
+	text-align: left;
+	list-style: disc;
+	width: 33%;
+	float: left;
+	display: inline;
 }

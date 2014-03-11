@@ -20,6 +20,7 @@ class WishesController < ApplicationController
 			@nav = "shared/nonFriendNav"
 		end
 		
+		@errors = "noError"
 		@sassy 	= SassyWish.new
 		@nice 	= NiceWish.new
 		@blank 	= BlankWish.new
@@ -27,6 +28,8 @@ class WishesController < ApplicationController
 
 	def create
 		@user = current_user
+		@errors = "errors"
+
 		@sassy 	= SassyWish.new
 		@nice 	= NiceWish.new
 		@blank 	= BlankWish.new
