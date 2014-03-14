@@ -5,30 +5,39 @@ class WishesController < ApplicationController
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
 		if current_user
-		 	@nav = "shared/friendNav"
+		 	@nav 	= "shared/friendNav"
 		 	@user = current_user
 		else
-			@nav = "shared/nonFriendNav"
+			@nav 	= "shared/nonFriendNav"
 		end
 	end
 
 	def new
 		if current_user
-		 	@nav = "shared/friendNav"
+		 	@nav 	= "shared/friendNav"
 		 	@user = current_user
 		else
 			@nav = "shared/nonFriendNav"
 		end
 		
-		@errors = "noError"
+		@sassyErrors	= "noError"
+		@niceErrors		= "noError"
+		@blankErrors	= "noError"
 		@sassy 	= SassyWish.new
 		@nice 	= NiceWish.new
 		@blank 	= BlankWish.new
 	end
 
 	def create
-		@user = current_user
-		@errors = "errors"
+		if current_user
+		 	@nav 	= "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav 	= "shared/nonFriendNav"
+		end
+
+		@errors 	= "errors"
+		@noError 	= "noError"
 
 		@sassy 	= SassyWish.new
 		@nice 	= NiceWish.new
@@ -44,10 +53,31 @@ class WishesController < ApplicationController
 			render :new
 		end
 
+		if @wish._type == "SassyWish"
+			@wishClass		= "gw_active"
+			@sassyErrors 	= @errors
+			@niceErrors 	= @noError
+			@blankErrors 	= @noError
+		elsif @wish._type == "NiceWish"
+			@wishClass		= "gw_active"
+			@niceErrors 	= @errors
+			@sassyErrors 	= @noError
+			@blankErrors 	= @noError
+		elsif @wish._type == "BlankWish"
+			@wishClass		= "gw_active"
+			@blankErrors 	= @errors
+			@sassyErrors 	= @noError
+			@niceErrors 	= @noError
+		else
+			@errors
+		end
+
 		@wish.save
 		if @wish.errors.any?
 			render :new
 			@user = current_user
+			puts "*"*50
+			puts @wish._type
 		else
 			redirect_to wishes_url
 		end
