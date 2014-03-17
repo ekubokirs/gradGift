@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
 
-	#before_action :authenticate_user!
+	before_action :authenticate_user!
 
 	def index
 		@wishes = Wish.sort(:created_at.desc).all

@@ -1,6 +1,8 @@
 class User
   include MongoMapper::Document
 
+  has_many :wishes
+
   key :provider,          String
   key :uid,               String
   key :name,              String
