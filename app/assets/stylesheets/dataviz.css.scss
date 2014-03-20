@@ -1,0 +1,27 @@
+.bubble {
+  display: block;
+  position: absolute;
+}
+
+.bubbleFill {
+  position: absolute;
+  display: block;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  border-radius: 70px;
+  opacity: .8;
+  text-align: center;
+}
+
+.bubbleFill:hover {
+  border: solid 4px white;
+}
+
+#canvas {
+  margin-left: auto;
+  margin-right: auto;
+  /*background-image: url(backgroundgrid1.png);*/
+  /*background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;*/
+}
