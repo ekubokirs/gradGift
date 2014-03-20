@@ -39,4 +39,22 @@ class SessionsController < ApplicationController
 	def failure
 	  redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
 	end
+
+	def stats
+		@wish = Wish.all
+		@types = Array.new
+
+		@wish.each do |wish|
+			@types << {type: wish._type}
+		end
+
+		respond_to do |format|
+		  format.json { render json: @types }
+		end
+	end
+
+	def egg
+
+	end
+
 end
