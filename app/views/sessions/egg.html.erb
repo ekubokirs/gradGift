@@ -1,8 +1,15 @@
 <%= render partial: @nav %>
 <%= render partial: "shared/header" %>
-<div class="gw_bubble">
-  <div id="canvas"></div>
+<div class="row">
+  <div class="gw_open">You found the weird practice area!</div>
+  <div class="gw_bubble gw_showBub large-5 columns">
+    <div id="canvas"></div>
+  </div>
+  <div class="gw_bubble large-5 columns">
+    <%= render partial:"info" %>
+  </div>
 </div>
+<%= render partial: "shared/footer" %>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -48,12 +55,12 @@
 
     var vis = new SimpleVis("#canvas", wishNum);
 
-    for(var j=0; j<7; j++){
-      $("#bubble-"+j).on("click",function(){
-        window.location = this.getAttribute("data-questionurl");
-        return false;
-      });
-    }
+    // for(var j=0; j<7; j++){
+    //   $("#bubble-"+j).on("click",function(){
+    //     window.location = this.getAttribute("data-reveal-id");
+    //     return false;
+    //   });
+    // }
 
     for(var k=0; k<wishCount.length; k++){
       $('#bubble-'+k).tooltip({
@@ -61,6 +68,7 @@
         title: wishName[k]+": "+wishNum[k],
         trigger: "hover"
       });
+      console.log(wishName[k]);
     }
   })
 </script>

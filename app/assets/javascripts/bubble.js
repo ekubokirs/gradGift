@@ -21,7 +21,7 @@ SimpleBubble.prototype.init = function() {
   this.elFill = $("<div class='bubbleFill'></div>");
   
   this.el[0].setAttribute("id","bubble-" + this.id);
-  this.el[0].setAttribute("data-questionurl","ideas");
+  this.el[0].setAttribute("data-reveal-id","info");
   
   this.el.append(this.elFill);
 
@@ -79,7 +79,7 @@ SimpleVis.prototype.init = function() {
   for(var i=0; i< this.data.length; i++) {
     var b = new SimpleBubble(this.data[i], i, this.canvas);
     /* Define Starting locations */
-    b.x = b.boxSize + (20 * (i+1));
+    b.x = b.boxSize + (5 * (i+1));
     b.y = b.boxSize + (10 * (i+1));
     this.bubbles.push(b);
     /* Add root bubble element to visualization */
@@ -106,5 +106,5 @@ SimpleVis.prototype.init = function() {
 SimpleVis.prototype.setBubbleLocation = function(bubble, alpha, centers) {
   var center = centers[this.bin(bubble.id)];
   bubble.y = bubble.y + (center.y - bubble.y) * (0.02) * alpha;
-  bubble.x = bubble.x + (center.x - bubble.x) * (0.115) * alpha;
+  bubble.x = bubble.x + (center.x - bubble.x) * (0.01) * alpha;
 };

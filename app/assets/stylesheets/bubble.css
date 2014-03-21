@@ -20,13 +20,27 @@
 }
 
 #canvas {
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .gw_bubble{
   background-color: white;
-  margin:5%;
   box-shadow: 2px 2px 2px 2px #888;
   text-align: center;
+  margin-top: 2%;
+  height: 300px;
+}
+.gw_showBub{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.gw_bubbleInfo{
+  margin-right: 5%;
+  margin: 5%;
+}
+.gw_wishCount{
+  text-align: left;
+  margin-top: 3%;
 }

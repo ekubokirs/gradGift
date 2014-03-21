@@ -40,6 +40,26 @@ class SessionsController < ApplicationController
 	  redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
 	end
 
+	def stats
+
+		@b = BlankWish.all.count
+		@s = SassyWish.all.count
+		@n = NiceWish.all.count
+
+		respond_to do |format|
+ 		  format.json { render json: @b }
+ 		end 
+	end
+
+	def thanks
+		if current_user
+		 	@nav 	= "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav = "shared/nonFriendNav"
+		end
+	end
+
 	def egg
 		if current_user
 		 	@nav 	= "shared/friendNav"
@@ -47,6 +67,10 @@ class SessionsController < ApplicationController
 		else
 			@nav = "shared/nonFriendNav"
 		end
+
+		@b = BlankWish.all.count
+		@s = SassyWish.all.count
+		@n = NiceWish.all.count
 
 		@types = Array.new
 		@wishes = Wish.all
