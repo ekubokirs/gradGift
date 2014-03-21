@@ -1,0 +1,66 @@
+<%= render partial: @nav %>
+<%= render partial: "shared/header" %>
+<div class="gw_bubble">
+  <div id="canvas"></div>
+</div>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var visArray = [];
+
+    <% @types.each do |type| %>
+      visArray.push("<%= type %>")
+    <% end %>
+
+    console.log(visArray);
+
+    var wishCount = [];
+
+    var current = null;
+    var cnt = 0;
+    for (var i=0; i<visArray.length; i++){
+      if (visArray[i] != current){
+        if (cnt > 0){
+          console.log(current +" has "+cnt);
+          wishCount.push({name: current, num: cnt});
+        }
+        current = visArray[i];
+        cnt = 1;
+      }
+      else{
+        cnt++;
+      }
+    }
+    if (cnt > 0){
+      console.log(current + " contains "+ cnt);
+      wishCount.push({name: current, num:cnt});
+    }
+
+    var wishName = [];
+    var wishNum = [];
+
+    for(var l=0; l<wishCount.length; l++){
+      wishName.push(wishCount[l].name);
+      wishNum.push(wishCount[l].num);
+    }
+    console.log(wishName);
+    console.log(wishNum);
+
+    var vis = new SimpleVis("#canvas", wishNum);
+
+    for(var j=0; j<7; j++){
+      $("#bubble-"+j).on("click",function(){
+        window.location = this.getAttribute("data-questionurl");
+        return false;
+      });
+    }
+
+    for(var k=0; k<wishCount.length; k++){
+      $('#bubble-'+k).tooltip({
+        placement: "auto",
+        title: wishName[k]+": "+wishNum[k],
+        trigger: "hover"
+      });
+    }
+  })
+</script>

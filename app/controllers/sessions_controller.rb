@@ -41,11 +41,12 @@ class SessionsController < ApplicationController
 	end
 
 	def stats
-		@types = Array.new
-		@wishes = Wish.all
-		@wishes.each do |wish|
-			@types.push(wish._type)
-		end
+
+		# @types = Array.new
+		# @wishes = Wish.all
+		# @wishes.each do |wish|
+		# 	@types.push(wish._type)
+		# end
 		# @bWish = BlankWish.all.count
 		# @sWish = SassyWish.all.count
 		# @nWish = NiceWish.all.count
@@ -61,17 +62,30 @@ class SessionsController < ApplicationController
 	end
 
 	def egg
-		@wishes = Wish.all
+		if current_user
+		 	@nav 	= "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav = "shared/nonFriendNav"
+		end
 
-		@bWish = BlankWish.all.count
-		@sWish = SassyWish.all.count
-		@nWish = NiceWish.all.count
-		
 		@types = Array.new
+		@wishes = Wish.all
+		
+		@blank = BlankWish.all
+		@blank.each do |wish|
+			@types.push(wish._type)
+		end
 
-		@types << {name: "Blank Wish", count: @bWish}
-		@types <<	{name: "Sassy Wish", count: @sWish}
-		@types << {name: "Nice Wish",  count: @nWish}
+		@sassy = SassyWish.all
+		@sassy.each do |wish|
+			@types.push(wish._type)
+		end
+
+		@nice=NiceWish.all
+		@nice.each do |wish|
+			@types.push(wish._type)
+		end
 	end
 
 end

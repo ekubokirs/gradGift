@@ -1,0 +1,32 @@
+.bubble {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+}
+
+.bubbleFill {
+  position: absolute;
+  display: block;
+  border-radius: 100%;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  border-radius: 70px;
+  opacity: .8;
+  text-align: center;
+}
+
+.bubbleFill:hover {
+  border: solid 4px white;
+}
+
+#canvas {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gw_bubble{
+  background-color: white;
+  margin:5%;
+  box-shadow: 2px 2px 2px 2px #888;
+  text-align: center;
+}
