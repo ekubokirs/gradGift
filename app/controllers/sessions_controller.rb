@@ -40,27 +40,6 @@ class SessionsController < ApplicationController
 	  redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
 	end
 
-	def stats
-
-		# @types = Array.new
-		# @wishes = Wish.all
-		# @wishes.each do |wish|
-		# 	@types.push(wish._type)
-		# end
-		# @bWish = BlankWish.all.count
-		# @sWish = SassyWish.all.count
-		# @nWish = NiceWish.all.count
-		# @types = Array.new
-
-		# @types << {name: "Blank Wish", count: @bWish}
-		# @types <<	{name: "Sassy Wish", count: @sWish}
-		# @types << {name: "Nice Wish",  count: @nWish}
-
-		respond_to do |format|
-		  format.json { render json: @types }
-		end
-	end
-
 	def egg
 		if current_user
 		 	@nav 	= "shared/friendNav"
@@ -71,7 +50,7 @@ class SessionsController < ApplicationController
 
 		@types = Array.new
 		@wishes = Wish.all
-		
+
 		@blank = BlankWish.all
 		@blank.each do |wish|
 			@types.push(wish._type)
