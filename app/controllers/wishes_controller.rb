@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
 
-	before_action :authenticate_user!
+	#before_action :authenticate_user!
 
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
@@ -80,7 +80,8 @@ class WishesController < ApplicationController
 			redirect_to wishes_url
 		end
 	end
-
+	
+	
 	private
 		def sassy_params
 			params.require(:sassy_wish).permit(

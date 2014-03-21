@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
  #    redirect_to root_url
  #  end
 
-  def create
+	def create
 	  auth = request.env["omniauth.auth"]
 	  user = User.where(:provider => auth['provider'],
 	                    :uid => auth['uid']).first || User.create_with_omniauth(auth)
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   #   redirect_to root_url
   # end
   
-  def destroy
+	def destroy
 	  reset_session
 	  redirect_to root_url, :notice => 'Signed out!'
 	end
@@ -39,4 +39,34 @@ class SessionsController < ApplicationController
 	def failure
 	  redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
 	end
+
+	def stats
+		@bWish = BlankWish.all.count
+		@sWish = SassyWish.all.count
+		@nWish = NiceWish.all.count
+		@types = Array.new
+
+		@types << {name: "Blank Wish", count: @bWish}
+		@types <<	{name: "Sassy Wish", count: @sWish}
+		@types << {name: "Nice Wish",  count: @nWish}
+
+		respond_to do |format|
+		  format.json { render json: @types }
+		end
+	end
+
+	def egg
+		@wishes = Wish.all
+
+		@bWish = BlankWish.all.count
+		@sWish = SassyWish.all.count
+		@nWish = NiceWish.all.count
+		
+		@types = Array.new
+
+		@types << {name: "Blank Wish", count: @bWish}
+		@types <<	{name: "Sassy Wish", count: @sWish}
+		@types << {name: "Nice Wish",  count: @nWish}
+	end
+
 end
