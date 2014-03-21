@@ -6,22 +6,26 @@
 .bubbleFill {
   position: absolute;
   display: block;
+  border: solid 1px white;
   -webkit-border-radius: 70px;
   -moz-border-radius: 70px;
   border-radius: 70px;
-  opacity: .8;
+}
+
+.tooltip {
+  position: absolute;
+  display: block;
+}
+
+.tooltipFill {
+  position: absolute;
+  display: block;
+}
+
+.tooltipFill p {
+  position: absolute;
+  display: block;
   text-align: center;
-}
-
-.bubbleFill:hover {
-  border: solid 4px white;
-}
-
-#canvas {
-  margin-left: auto;
-  margin-right: auto;
-  /*background-image: url(backgroundgrid1.png);*/
-  /*background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;*/
+  background-color: #fff;
+  padding: 3px 10px 3px 10px;
 }

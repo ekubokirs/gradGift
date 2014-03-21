@@ -41,14 +41,19 @@ class SessionsController < ApplicationController
 	end
 
 	def stats
-		@bWish = BlankWish.all.count
-		@sWish = SassyWish.all.count
-		@nWish = NiceWish.all.count
 		@types = Array.new
+		@wishes = Wish.all
+		@wishes.each do |wish|
+			@types.push(wish._type)
+		end
+		# @bWish = BlankWish.all.count
+		# @sWish = SassyWish.all.count
+		# @nWish = NiceWish.all.count
+		# @types = Array.new
 
-		@types << {name: "Blank Wish", count: @bWish}
-		@types <<	{name: "Sassy Wish", count: @sWish}
-		@types << {name: "Nice Wish",  count: @nWish}
+		# @types << {name: "Blank Wish", count: @bWish}
+		# @types <<	{name: "Sassy Wish", count: @sWish}
+		# @types << {name: "Nice Wish",  count: @nWish}
 
 		respond_to do |format|
 		  format.json { render json: @types }
