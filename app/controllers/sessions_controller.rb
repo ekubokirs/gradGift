@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+	before_action :authenticate_user!, only: [:egg]
+
 
 	def index
 		if current_user
@@ -18,7 +20,7 @@ class SessionsController < ApplicationController
  #    redirect_to root_url
  #  end
 
-  def create
+	def create
 	  auth = request.env["omniauth.auth"]
 	  user = User.where(:provider => auth['provider'],
 	                    :uid => auth['uid']).first || User.create_with_omniauth(auth)
@@ -31,7 +33,7 @@ class SessionsController < ApplicationController
   #   redirect_to root_url
   # end
   
-  def destroy
+	def destroy
 	  reset_session
 	  redirect_to root_url, :notice => 'Signed out!'
 	end
@@ -39,4 +41,56 @@ class SessionsController < ApplicationController
 	def failure
 	  redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
 	end
+
+	def stats
+
+		@b = BlankWish.all.count
+		@s = SassyWish.all.count
+		@n = NiceWish.all.count
+
+		respond_to do |format|
+ 		  format.json { render json: @b }
+ 		end 
+	end
+
+	def thanks
+		if current_user
+		 	@nav 	= "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav = "shared/nonFriendNav"
+		end
+	end
+
+	def egg
+		if current_user
+		 	@nav 	= "shared/friendNav"
+		 	@user = current_user
+		else
+			@nav = "shared/nonFriendNav"
+		end
+
+		@b = BlankWish.all.count
+		@s = SassyWish.all.count
+		@n = NiceWish.all.count
+
+		@types = Array.new
+		@wishes = Wish.all
+
+		@blank = BlankWish.all
+		@blank.each do |wish|
+			@types.push(wish._type)
+		end
+
+		@sassy = SassyWish.all
+		@sassy.each do |wish|
+			@types.push(wish._type)
+		end
+
+		@nice=NiceWish.all
+		@nice.each do |wish|
+			@types.push(wish._type)
+		end
+	end
+
 end
