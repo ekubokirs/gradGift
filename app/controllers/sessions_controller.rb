@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+	before_action :authenticate_user!, only: [:egg]
+
 
 	def index
 		if current_user
