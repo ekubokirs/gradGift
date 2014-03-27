@@ -76,13 +76,12 @@ class WishesController < ApplicationController
 		if @wish.errors.any?
 			render :new
 			@user = current_user
-			puts "*"*50
-			puts @wish._type
 		else
 			redirect_to wishes_url
 		end
 	end
-
+	
+	
 	private
 		def sassy_params
 			params.require(:sassy_wish).permit(
