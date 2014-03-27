@@ -1,15 +1,9 @@
 class WishesController < ApplicationController
-
 	before_action :authenticate_user!
+	before_action	:navigation_type
 
 	def index
 		@wishes = Wish.sort(:created_at.desc).all
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav 	= "shared/nonFriendNav"
-		end
 	end
 
 	def new
@@ -29,12 +23,6 @@ class WishesController < ApplicationController
 	end
 
 	def create
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav 	= "shared/nonFriendNav"
-		end
 
 		@errors 	= "errors"
 		@noError 	= "noError"

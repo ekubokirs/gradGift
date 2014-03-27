@@ -1,14 +1,9 @@
 class SessionsController < ApplicationController
 	before_action :authenticate_user!, only: [:egg]
-
+	before_action	:navigation_type, only: [:index, :thanks, :egg]
 
 	def index
-		if current_user
-		 	@nav = "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
+	
 	end
 
 	def new
@@ -54,27 +49,15 @@ class SessionsController < ApplicationController
 	end
 
 	def thanks
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
+	
 	end
 
 	def egg
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
-
 		@b = BlankWish.all.count
 		@s = SassyWish.all.count
 		@n = NiceWish.all.count
 
-		@types = Array.new
+		@types 	= Array.new
 		@wishes = Wish.all
 
 		@blank = BlankWish.all
@@ -87,7 +70,7 @@ class SessionsController < ApplicationController
 			@types.push(wish._type)
 		end
 
-		@nice=NiceWish.all
+		@nice = NiceWish.all
 		@nice.each do |wish|
 			@types.push(wish._type)
 		end

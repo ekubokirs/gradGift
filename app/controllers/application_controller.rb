@@ -7,15 +7,12 @@ class ApplicationController < ActionController::Base
   helper_method	:user_signed_in?
   helper_method	:correct_user?
   helper_method :authenticate_user!
+  helper_method :navigation_type
 
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-
-  # def is_authenticated?
-  #   redirect_to root_url unless current_user
-  # end
   
   def user_signed_in?
     return true if current_user
@@ -31,6 +28,15 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if !current_user
       redirect_to root_url, :alert => 'You need to sign in for access to this page.'
+    end
+  end
+
+  def navigation_type
+    if current_user
+      @nav = "shared/friendNav"
+      @user = current_user
+    else
+      @nav = "shared/nonFriendNav"
     end
   end
 end
