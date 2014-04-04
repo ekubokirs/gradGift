@@ -9,11 +9,6 @@ class SessionsController < ApplicationController
 	def new
 	  redirect_to '/auth/facebook'
 	end
-	# def create
- #    user = User.from_omniauth(env["omniauth.auth"])
- #    session[:user_id] = user.id
- #    redirect_to root_url
- #  end
 
 	def create
 	  auth = request.env["omniauth.auth"]
@@ -23,11 +18,6 @@ class SessionsController < ApplicationController
 	  redirect_to root_url, :notice => "Signed in!"
 	end
 
-  # def destroy
-  #   session[:user_id] = nil
-  #   redirect_to root_url
-  # end
-  
 	def destroy
 	  reset_session
 	  redirect_to root_url, :notice => 'Signed out!'
