@@ -1,24 +1,14 @@
 class SessionsController < ApplicationController
 	before_action :authenticate_user!, only: [:egg]
-
+	before_action	:navigation_type, only: [:index, :thanks, :egg]
 
 	def index
-		if current_user
-		 	@nav = "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
+	
 	end
 
 	def new
 	  redirect_to '/auth/facebook'
 	end
-	# def create
- #    user = User.from_omniauth(env["omniauth.auth"])
- #    session[:user_id] = user.id
- #    redirect_to root_url
- #  end
 
 	def create
 	  auth = request.env["omniauth.auth"]
@@ -28,11 +18,6 @@ class SessionsController < ApplicationController
 	  redirect_to root_url, :notice => "Signed in!"
 	end
 
-  # def destroy
-  #   session[:user_id] = nil
-  #   redirect_to root_url
-  # end
-  
 	def destroy
 	  reset_session
 	  redirect_to root_url, :notice => 'Signed out!'
@@ -54,27 +39,15 @@ class SessionsController < ApplicationController
 	end
 
 	def thanks
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
+	
 	end
 
 	def egg
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
-
 		@b = BlankWish.all.count
 		@s = SassyWish.all.count
 		@n = NiceWish.all.count
 
-		@types = Array.new
+		@types 	= Array.new
 		@wishes = Wish.all
 
 		@blank = BlankWish.all
@@ -87,7 +60,7 @@ class SessionsController < ApplicationController
 			@types.push(wish._type)
 		end
 
-		@nice=NiceWish.all
+		@nice = NiceWish.all
 		@nice.each do |wish|
 			@types.push(wish._type)
 		end
