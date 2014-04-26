@@ -7,13 +7,6 @@ class WishesController < ApplicationController
 	end
 
 	def new
-		if current_user
-		 	@nav 	= "shared/friendNav"
-		 	@user = current_user
-		else
-			@nav = "shared/nonFriendNav"
-		end
-		
 		@sassyErrors	= "noError"
 		@niceErrors		= "noError"
 		@blankErrors	= "noError"
