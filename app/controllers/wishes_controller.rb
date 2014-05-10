@@ -26,10 +26,13 @@ class WishesController < ApplicationController
 		
 		if params[:sassy_wish]
 			@wish = SassyWish.new sassy_params
+			@wish.user = current_user
 		elsif params[:nice_wish]
 			@wish = NiceWish.new nice_params
+			@wish.user = current_user
 		elsif params[:blank_wish]
 			@wish = BlankWish.new blank_params
+			@wish.user = current_user
 		else
 			render :new
 		end
