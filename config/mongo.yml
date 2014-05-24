@@ -18,4 +18,4 @@ test:
 
 production:
   <<: *defaults
-  uri: mongodb://emk411:gradgift22@ds027489.mongolab.com:27489/heroku_app21445121
+  uri: mongodb://heroku_app21445121_A:TdeLInYZlonFHKoOBOCsMIaYHNEnBNty@ds027489.mongolab.com:27489/heroku_app21445121
